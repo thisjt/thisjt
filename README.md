@@ -1,4 +1,6 @@
-## Hi there 👋
+🌱 **SvelteKit Enthusiast**. Nothing more, nothing less.
+
+🌐 [thisjt.me](https://thisjt.me "thisjt.me Personal Website") 📩 [reach out!](mailto:contact@thisjt.me)
 
 <!--
 **thisjt/thisjt** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
