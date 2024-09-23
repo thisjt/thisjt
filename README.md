@@ -5,25 +5,13 @@ I'm Joshua, a passionate and versatile Frontend developer, and I'm thrilled to h
 
 ![Technology Skills](./assets/techskills.png)
 
-## NodeJS
+## Feel free to visit my portfolio for projects showcasing my talents.
 
-I've used NodeJS in basically everything ever since I started my career in web development.
+🔭 [thisjt.me/portfolio](https://thisjt.me/portfolio "thisjt.me Porfolio")
 
-## JavaScript
+## You can also check my blog for code-related things that I find interesting.
 
-## Svelte
-
-## SASS
-
-## Tailwind
-
-## Prisma
-
-- PostgreSQL
-- SQLite
-- MySQL
-
-## NWJS
+🌱 [thisjt.me/blog](https://thisjt.me/blog "thisjt.me Blog")
 
 🌐 [thisjt.me](https://thisjt.me "thisjt.me Personal Website") 📩 [reach out!](mailto:contact@thisjt.me)
 
