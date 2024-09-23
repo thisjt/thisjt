@@ -13,7 +13,7 @@ I'm Joshua, a passionate and versatile Frontend developer, and I'm thrilled to h
 
 🌱 [thisjt.me/blog](https://thisjt.me/blog "thisjt.me Blog")
 
--
+- • •
 
 🌐 [thisjt.me](https://thisjt.me "thisjt.me Personal Website") 📩 [reach out!](mailto:contact@thisjt.me)
 
