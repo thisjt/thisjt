@@ -3,7 +3,7 @@
 	import PageTitle from '$lib/PageTitle.svelte';
 	import SvelteSEO from 'svelte-seo';
 	import { onMount } from 'svelte';
-	import { contentStrip, loadArticle } from '$lib/postfetcher.js';
+	import { contentStrip, loadArticle } from '$lib/postfetcher';
 
 	export let data;
 	/**@type {HTMLDivElement}*/
@@ -22,7 +22,7 @@
 		imageViewer.addEventListener('click', imageViewerHandler);
 
 		if (data.clientFetch) {
-			/**@type {Awaited<ReturnType<import('$lib/postfetcher.js').loadArticle>>}*/
+			/**@type {Awaited<ReturnType<import('$lib/postfetcher').loadArticle>>}*/
 			let clientData;
 			try {
 				clientData = JSON.parse(sessionStorage.getItem(`thisjtme_blog_${data.slug}`) || '');

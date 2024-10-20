@@ -1,7 +1,7 @@
 <script>
 	import PageHeader from '$lib/PageHeader.svelte';
 	import PageTitle from '$lib/PageTitle.svelte';
-	import { loadArticles } from '$lib/postfetcher.js';
+	import { loadArticles } from '$lib/postfetcher';
 	import { onMount } from 'svelte';
 	import SvelteSEO from 'svelte-seo';
 
@@ -10,7 +10,7 @@
 	let { tags, posts, error } = data;
 
 	onMount(async () => {
-		/**@type {Awaited<ReturnType<import('$lib/postfetcher.js').loadArticles>>}*/
+		/**@type {Awaited<ReturnType<import('$lib/postfetcher').loadArticles>>}*/
 		let clientData;
 
 		if (!data.clientFetch) {
