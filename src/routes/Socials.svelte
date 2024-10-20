@@ -1,5 +1,5 @@
 <script>
-	// @ts-ignore: jsdoc? hello?
+	// @ts-expect-error: untyped library
 	import SocialIcons from '@rodneylab/svelte-social-icons';
 	export let miniicons = false;
 

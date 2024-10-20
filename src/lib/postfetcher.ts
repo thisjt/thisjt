@@ -1,34 +1,26 @@
 const endpoint = 'https://blog.thisjt.me';
 
-/** @param {string} content */
-export function contentStrip(content) {
+export function contentStrip(content: string) {
 	content = content.replace(/(<([^>]+)>)/gi, '').slice(0, 400);
 	content = content.replaceAll('&nbsp;', '');
 	return content;
 }
 
-/**
- * @param {string} url
- * @param {(url: string) => Promise<Response>} [customFetch]
- */
-export async function loadArticles(url, customFetch) {
+export async function loadArticles(url: string, customFetch?: (url: string) => Promise<Response>) {
 	try {
 		const allPosts = customFetch ? await customFetch(`${endpoint}${url}`) : await fetch(`${endpoint}${url}`);
 
-		/**@type {import('$lib/types').portfolioPost[]} */
-		const posts = [];
-		/**@type {Object.<string, string>} */
-		const tags = {};
+		const posts: import('$lib/types').portfolioPost[] = [];
+		const tags: { [s: string]: string } = {};
 
-		/**@type {import('$lib/types').bloggerAPIresult} */
-		const allPostsDecoded = await allPosts.json();
+		const allPostsDecoded: import('$lib/types').bloggerAPIresult = await allPosts.json();
 		allPostsDecoded.items?.forEach((post) => {
-			let url = new URL(post.url);
-			let slug = url.pathname.replaceAll('.html', '');
-			let explodedSlug = slug.split('/');
-			let constructedSlug = explodedSlug.pop();
+			const url = new URL(post.url);
+			const slug = url.pathname.replaceAll('.html', '');
+			const explodedSlug = slug.split('/');
+			const constructedSlug = explodedSlug.pop();
 
-			let uid = (parseInt(explodedSlug.join('')) - 200000).toString(16);
+			const uid = (parseInt(explodedSlug.join('')) - 200000).toString(16);
 			post.labels?.forEach((label) => {
 				tags[label] = '';
 			});
@@ -51,16 +43,11 @@ export async function loadArticles(url, customFetch) {
 	}
 }
 
-/**
- * @param {string} slug
- * @param {(url: string) => Promise<Response>} [customFetch]
- */
-export async function loadArticle(slug, customFetch) {
+export async function loadArticle(slug: string, customFetch?: (url: string) => Promise<Response>) {
 	try {
 		const allPosts = customFetch ? await customFetch(`${endpoint}/post?slug=${slug}`) : await fetch(`${endpoint}/post?slug=${slug}`);
 
-		/**@type {import('$lib/types').bloggerAPIpostresult} */
-		const apiPost = await allPosts.json();
+		const apiPost: import('$lib/types').bloggerAPIpostresult = await allPosts.json();
 		if (apiPost.error) return { error: true, post: null, time: new Date().getTime() };
 
 		const post = {

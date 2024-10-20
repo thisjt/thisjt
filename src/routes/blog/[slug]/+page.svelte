@@ -30,7 +30,7 @@
 				if (clientData.time < new Date().getTime() - 1000 * 60 * 30) throw Error('cache refresh');
 				post = clientData.post;
 				error = clientData.error;
-			} catch (e) {
+			} catch {
 				loadArticle(data.slug).then((clientData) => {
 					post = clientData.post;
 					error = clientData.error;

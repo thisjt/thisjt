@@ -22,7 +22,7 @@
 			if (!clientData) throw Error('no sessionStorage');
 			if (!Array.isArray(clientData.tags) || !Array.isArray(clientData.posts) || clientData.error !== false) throw Error('bad data form');
 			if (clientData.time < new Date().getTime() - 1000 * 60 * 30) throw Error('cache refresh');
-		} catch (e) {
+		} catch {
 			clientData = await loadArticles('/blog');
 			sessionStorage.setItem('thisjtme_blog', JSON.stringify(clientData));
 		}

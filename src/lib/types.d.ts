@@ -28,5 +28,5 @@ export type bloggerAPIpostresult = {
 	title: string;
 	content: string;
 	labels: string[];
-	error?: {};
+	error?: Record<string, string>;
 };
