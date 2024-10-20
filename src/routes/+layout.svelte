@@ -33,40 +33,13 @@
 	<div class="flex flex-col lg:w-4/12">
 		<Sidebar />
 	</div>
-	<div class="bg-neutral rounded-2xl lg:w-8/12">
-		<div class="bg-secondary flex rounded-tl-2xl rounded-tr-2xl text-sm text-white sm:text-lg">
-			<a
-				href="/"
-				class="{$currentPage === ''
-					? '!bg-primary'
-					: ''} hover:bg-primary grow rounded-tl-2xl py-4 text-center font-bold sm:w-auto sm:px-5"
-				>About</a
-			>
-			<a
-				href="/resume"
-				class="{$currentPage === 'resume'
-					? '!bg-primary'
-					: ''} hover:bg-primary grow py-4 text-center font-bold sm:w-auto sm:px-5">Resume</a
-			>
-			<a
-				href="/portfolio"
-				class="{$currentPage === 'portfolio'
-					? '!bg-primary'
-					: ''} hover:bg-primary grow py-4 text-center font-bold sm:w-auto sm:px-5">Portfolio</a
-			>
-			<a
-				href="/blog"
-				class="{$currentPage === 'blog'
-					? '!bg-primary'
-					: ''} hover:bg-primary grow py-4 text-center font-bold sm:w-auto sm:px-5">Blog</a
-			>
-			<a
-				href="/contact"
-				class="{$currentPage === 'contact'
-					? '!bg-primary'
-					: ''} hover:bg-primary grow rounded-tr-2xl py-4 text-center font-bold sm:w-auto sm:px-5"
-				>Contact</a
-			>
+	<div class="rounded-2xl bg-neutral lg:w-8/12">
+		<div class="flex rounded-tl-2xl rounded-tr-2xl bg-secondary text-sm text-white sm:text-lg">
+			<a href="/" class="{$currentPage === '' ? '!bg-primary' : ''} grow rounded-tl-2xl py-4 text-center font-bold hover:bg-primary sm:w-auto sm:px-5">About</a>
+			<a href="/resume" class="{$currentPage === 'resume' ? '!bg-primary' : ''} grow py-4 text-center font-bold hover:bg-primary sm:w-auto sm:px-5">Resume</a>
+			<a href="/portfolio" class="{$currentPage === 'portfolio' ? '!bg-primary' : ''} grow py-4 text-center font-bold hover:bg-primary sm:w-auto sm:px-5">Portfolio</a>
+			<a href="/blog" class="{$currentPage === 'blog' ? '!bg-primary' : ''} grow py-4 text-center font-bold hover:bg-primary sm:w-auto sm:px-5">Blog</a>
+			<a href="/contact" class="{$currentPage === 'contact' ? '!bg-primary' : ''} grow rounded-tr-2xl py-4 text-center font-bold hover:bg-primary sm:w-auto sm:px-5">Contact</a>
 		</div>
 		<slot />
 	</div>

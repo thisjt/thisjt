@@ -4,7 +4,7 @@
 </script>
 
 <PageTitle text="skills" />
-<div class="px-4 w-full">
+<div class="w-full px-4">
 	<PageHeader heading="Skills" />
 	<p class="mt-4">Working on it.</p>
 	<!-- Frontend Web Dev (HTML, SASS, Tailwind) -->

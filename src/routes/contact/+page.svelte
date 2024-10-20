@@ -34,13 +34,13 @@
 		],
 	}} />
 <PageTitle text="contact" />
-<div class="px-4 w-full">
+<div class="w-full px-4">
 	<PageHeader heading="Contact" />
 	<p class="mb-4 mt-6">I live somewhere here:</p>
 	<div class="w-full" style="background-color:rgba(0,0,0,0.1)">
 		<iframe
 			style="filter:invert(100%) grayscale(1)"
-			class="w-full transition opacity-0"
+			class="w-full opacity-0 transition"
 			title="thisjtme Location"
 			height="400"
 			frameborder="0"

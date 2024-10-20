@@ -33,8 +33,8 @@
 
 {#if miniicons}
 	{#each socials as social}
-		<a href={social.link} target="_blank" class="flex hover:bg-base-100 rounded-lg cursor-pointer items-center">
-			<div class="flex items-center justify-center px-2 rounded-lg text-center">
+		<a href={social.link} target="_blank" class="flex cursor-pointer items-center rounded-lg hover:bg-base-100">
+			<div class="flex items-center justify-center rounded-lg px-2 text-center">
 				<SocialIcons network={social.icon} width="32" height="32" fgColor="#ffffff" bgColor="#009dff" />
 			</div>
 			<div class="text-xs">{social.social}</div>
@@ -42,15 +42,15 @@
 	{/each}
 {:else}
 	{#each socials as social}
-		<a href={social.link} target="_blank" class="flex hover:bg-base-100 rounded-lg cursor-pointer lg:p-2">
-			<div class="hidden md:flex lg:hidden items-center grow justify-end pl-2 text-gray-400">
+		<a href={social.link} target="_blank" class="flex cursor-pointer rounded-lg hover:bg-base-100 lg:p-2">
+			<div class="hidden grow items-center justify-end pl-2 text-gray-400 md:flex lg:hidden">
 				{social.text}
 			</div>
-			<div class="flex items-center justify-center mr-4 px-2 rounded-lg text-center">
+			<div class="mr-4 flex items-center justify-center rounded-lg px-2 text-center">
 				<SocialIcons network={social.icon} width="32" height="32" fgColor="#ffffff" bgColor="#009dff" />
 			</div>
 			<div class="md:hidden lg:block">
-				<div class="text-gray-400 text-sm">{social.social}</div>
+				<div class="text-sm text-gray-400">{social.social}</div>
 				<div class="">{social.text}</div>
 			</div>
 		</a>

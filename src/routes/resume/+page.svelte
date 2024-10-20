@@ -117,7 +117,7 @@
 				{/if}
 			</div>
 			<div class="mb-4 w-11/12">
-				<div class="text-warning text-xl">{xp.company}</div>
+				<div class="text-xl text-warning">{xp.company}</div>
 				<div class="text-white">{xp.position}</div>
 				<div class="text-accent">{xp.from} - {xp.to}</div>
 				<div class="text-sm">{xp.description}</div>
@@ -136,7 +136,7 @@
 			<div class="mt-1.5 w-1 grow rounded-sm bg-gray-600 transition group-hover:bg-gray-200"></div>
 		</div>
 		<div class="mb-4 w-11/12">
-			<div class="text-warning text-xl">University of San Carlos</div>
+			<div class="text-xl text-warning">University of San Carlos</div>
 			<div class="text-white">Bachelor of Science in Electronics Engineering</div>
 			<div class="text-accent">June 2013 - May 2019</div>
 		</div>
@@ -146,7 +146,7 @@
 			<div class="mb-1 mt-2.5 h-2 w-2 rounded bg-gray-600 transition group-hover:bg-gray-200"></div>
 		</div>
 		<div class="mb-4 w-11/12">
-			<div class="text-warning text-xl">Blessed Trinity College (High School)</div>
+			<div class="text-xl text-warning">Blessed Trinity College (High School)</div>
 			<div class="text-accent">2009 - 2013</div>
 		</div>
 	</div>

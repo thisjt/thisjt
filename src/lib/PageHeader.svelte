@@ -23,11 +23,11 @@
 			{heading}
 		{/if}
 	</div>
-	<div class="{description ? 'sm:block' : ''} hidden grow m-4 ml-12 text-right text-gray-400 text-xs">{description}</div>
-	<div class="flex items-center justify-end grow {goback ? '' : 'hidden'}">
-		<a href={goback} class="rounded-lg px-3 py-1.5 bg-secondary transition hover:bg-primary cursor-pointer">Go Back</a>
+	<div class="{description ? 'sm:block' : ''} m-4 ml-12 hidden grow text-right text-xs text-gray-400">{description}</div>
+	<div class="flex grow items-center justify-end {goback ? '' : 'hidden'}">
+		<a href={goback} class="cursor-pointer rounded-lg bg-secondary px-3 py-1.5 transition hover:bg-primary">Go Back</a>
 	</div>
 </div>
-<div class="sm:hidden text-gray-400 text-xs mb-2">{description}</div>
+<div class="mb-2 text-xs text-gray-400 sm:hidden">{description}</div>
 
-<div class="w-16 h-1 ml-4 mb-4 bg-secondary"></div>
+<div class="mb-4 ml-4 h-1 w-16 bg-secondary"></div>

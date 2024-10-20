@@ -8,7 +8,7 @@
 	<meta name="robots" content="noindex, nofollow" />
 </svelte:head>
 <PageTitle text={`${$page.status || '000'} ${$page.error?.message.toLowerCase() || 'error'}`} />
-<div class="px-4 w-full">
+<div class="w-full px-4">
 	<PageHeader heading={`${$page.status || '000'} ${$page.error?.message || 'Error'}`} />
 	<p class="pt-4">An error has occurred.</p>
 	<p class="pt-4">

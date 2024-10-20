@@ -109,23 +109,23 @@
 	{/if}
 </svelte:head>
 <PageTitle text={`${post?.title.toLowerCase() || 'error'} | blog`} />
-<div class="px-4 w-full" bind:this={blogContent}>
+<div class="w-full px-4" bind:this={blogContent}>
 	<PageHeader level="h2" heading="Blog" goback="/blog" />
 	{#if post}
-		<div class="text-center mb-4 mt-6">
+		<div class="mb-4 mt-6 text-center">
 			<h1 class="text-4xl font-bold text-white">{post.title}</h1>
 		</div>
-		<p class="mb-4 blogBody">{@html post.content}</p>
+		<p class="blogBody mb-4">{@html post.content}</p>
 	{:else}
 		<div class="flex justify-center">
-			<div class="grow h-1"></div>
-			<div class="w-1/3 mt-3 h-10 animate-pulse grow flex flex-col bg-base-100 rounded-lg transition pb-3"></div>
-			<div class="grow h-1"></div>
+			<div class="h-1 grow"></div>
+			<div class="mt-3 flex h-10 w-1/3 grow animate-pulse flex-col rounded-lg bg-base-100 pb-3 transition"></div>
+			<div class="h-1 grow"></div>
 		</div>
-		<div class="w-full mt-12 h-64 animate-pulse grow flex flex-col bg-base-100 rounded-lg transition pb-3"></div>
-		<div class="w-full mt-12 h-6 animate-pulse grow flex flex-col bg-base-100 rounded-lg transition pb-3"></div>
-		<div class="w-full mt-4 h-6 animate-pulse grow flex flex-col bg-base-100 rounded-lg transition pb-3"></div>
-		<div class="w-full my-4 h-6 animate-pulse grow flex flex-col bg-base-100 rounded-lg transition pb-3"></div>
+		<div class="mt-12 flex h-64 w-full grow animate-pulse flex-col rounded-lg bg-base-100 pb-3 transition"></div>
+		<div class="mt-12 flex h-6 w-full grow animate-pulse flex-col rounded-lg bg-base-100 pb-3 transition"></div>
+		<div class="mt-4 flex h-6 w-full grow animate-pulse flex-col rounded-lg bg-base-100 pb-3 transition"></div>
+		<div class="my-4 flex h-6 w-full grow animate-pulse flex-col rounded-lg bg-base-100 pb-3 transition"></div>
 	{/if}
 	{#if error}
 		<p class="pt-4">An error has occurred.</p>
@@ -135,7 +135,7 @@
 	{/if}
 </div>
 <div
-	class="imageViewer | cursor-pointer fixed inset-0 bg-opacity-80 bg-black flex flex-col items-center justify-center transition"
+	class="imageViewer | fixed inset-0 flex cursor-pointer flex-col items-center justify-center bg-black bg-opacity-80 transition"
 	bind:this={imageViewer}
 	style="opacity:0;pointer-events:none">
 	<div>
@@ -145,7 +145,7 @@
 					imageViewer.style.opacity = '0';
 					imageViewer.style.pointerEvents = 'none';
 				}}
-				class="p-2 fixed top-4 right-4 sm:top-16 sm:right-24">
+				class="fixed right-4 top-4 p-2 sm:right-24 sm:top-16">
 				<img src="/assets/x.png" alt="" />
 			</button>
 		</div>

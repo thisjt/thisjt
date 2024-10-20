@@ -40,7 +40,7 @@
 		],
 	}} />
 <PageTitle />
-<div class="px-4 w-full">
+<div class="w-full px-4">
 	<PageHeader heading="About Me" />
 	<p class="mb-4">
 		Hello there! I'm Joshua, a passionate and versatile Frontend developer, and I'm thrilled to have you visit my personal website. Here you'll find a digital canvas where I bring
@@ -53,34 +53,34 @@
 	<p class="mb-6">Thank you for stopping by, and I hope my passion for development resonates with you. Let's embark on a journey of innovation together!</p>
 	<PageHeader level="h2" heading="What I Do" />
 
-	<div class="flex gap-4 flex-col sm:flex-row">
-		<div class="flex w-full sm:w-1/2 px-4 py-10 bg-base-100 rounded-xl">
+	<div class="flex flex-col gap-4 sm:flex-row">
+		<div class="flex w-full rounded-xl bg-base-100 px-4 py-10 sm:w-1/2">
 			<div class="mr-4">
 				<img src="/assets/code.png" alt="" />
 			</div>
 			<div>
-				<div class="font-bold text-white mb-1">Frontend Web Development</div>
+				<div class="mb-1 font-bold text-white">Frontend Web Development</div>
 				<div class="text-sm">Create, manage, develop, and fix Frontend related code.</div>
 			</div>
 		</div>
-		<div class="flex w-full sm:w-1/2 px-4 py-10 bg-base-100 rounded-xl">
+		<div class="flex w-full rounded-xl bg-base-100 px-4 py-10 sm:w-1/2">
 			<div class="mr-4">
 				<img src="/assets/laptop.png" alt="" />
 			</div>
 			<div>
-				<div class="font-bold text-white mb-1">Desktop Application Software</div>
+				<div class="mb-1 font-bold text-white">Desktop Application Software</div>
 				<div class="text-sm">Develop desktop application software using web technologies.</div>
 			</div>
 		</div>
 	</div>
 
 	<PageHeader level="h2" heading="Clients" />
-	<div class="flex gap-4 flex-col sm:flex-row mb-4">
+	<div class="mb-4 flex flex-col gap-4 sm:flex-row">
 		{#each clients as client}
-			<div class="flex w-full sm:w-1/2 flex-col bg-base-100 p-4 rounded-xl">
-				<div class="w-full justify-center items-center flex grow mb-4 sm:mb-0"><img class="w-full" src="/assets/{client.slug}.png" alt="" /></div>
+			<div class="flex w-full flex-col rounded-xl bg-base-100 p-4 sm:w-1/2">
+				<div class="mb-4 flex w-full grow items-center justify-center sm:mb-0"><img class="w-full" src="/assets/{client.slug}.png" alt="" /></div>
 				{#each client.locations as location}
-					<div class="text-xs text-center text-gray-500">
+					<div class="text-center text-xs text-gray-500">
 						{#if location}{location}{:else}&nbsp;{/if}
 					</div>
 				{/each}
