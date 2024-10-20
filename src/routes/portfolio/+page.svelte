@@ -1,37 +1,32 @@
-<script>
+<script lang="ts">
 	import PageHeader from '$lib/PageHeader.svelte';
 	import PageTitle from '$lib/PageTitle.svelte';
-	import { loadArticles } from '$lib/postfetcher';
-	import { onMount } from 'svelte';
+	// import { loadArticles } from '$lib/postfetcher';
+	// import { onMount } from 'svelte';
 	import SvelteSEO from 'svelte-seo';
+	import type { PageData } from './$types';
 
-	export let data;
+	export let data: PageData;
 
-	let { tags, posts, error } = data;
+	// onMount(async () => {
+	// 	/**@type {{tags:string[], error:boolean, posts:import('$lib/types').portfolioPost[], time:number}}*/
+	// 	let clientData;
 
-	onMount(async () => {
-		/**@type {{tags:string[], error:boolean, posts:import('$lib/types').portfolioPost[], time:number}}*/
-		let clientData;
+	// 	try {
+	// 		clientData = JSON.parse(sessionStorage.getItem('thisjtme_portfolio') || '');
+	// 		if (!clientData) throw Error('no sessionStorage');
+	// 		if (!Array.isArray(clientData.tags) || !Array.isArray(clientData.posts) || clientData.error !== false) throw Error('bad data form');
+	// 		if (clientData.time < new Date().getTime() - 1000 * 60 * 30) throw Error('cache refresh');
+	// 	} catch (e) {
+	// 		console.log(e);
+	// 		clientData = await loadArticles('/posts');
+	// 		sessionStorage.setItem('thisjtme_portfolio', JSON.stringify(clientData));
+	// 	}
 
-		if (!data.clientFetch) {
-			sessionStorage.setItem('thisjtme_portfolio', JSON.stringify({ tags, error, posts, time: new Date().getTime() }));
-			return;
-		}
-		try {
-			clientData = JSON.parse(sessionStorage.getItem('thisjtme_portfolio') || '');
-			if (!clientData) throw Error('no sessionStorage');
-			if (!Array.isArray(clientData.tags) || !Array.isArray(clientData.posts) || clientData.error !== false) throw Error('bad data form');
-			if (clientData.time < new Date().getTime() - 1000 * 60 * 30) throw Error('cache refresh');
-		} catch (e) {
-			console.log(e);
-			clientData = await loadArticles('/posts');
-			sessionStorage.setItem('thisjtme_portfolio', JSON.stringify(clientData));
-		}
-
-		tags = clientData.tags;
-		posts = clientData.posts;
-		error = clientData.error;
-	});
+	// 	tags = clientData.tags;
+	// 	posts = clientData.posts;
+	// 	error = clientData.error;
+	// });
 </script>
 
 <SvelteSEO
@@ -62,12 +57,13 @@
 		heading="Portfolio"
 		description={'In this page you will see my work as a portfolio that highlights my skills, experience, and expertise. It includes ' +
 			'a variety of projects across different disciplines, demonstrating my ability to deliver quality results.'} />
-	{#if error}
-		<div class="mb-4 mt-6 text-center">
-			<h1 class="text-4xl font-bold text-white">Ooops.</h1>
+	{#await data.streamed.posts}
+		<div class="mb-4 mt-8 flex flex-wrap gap-3">
+			<div class="| group mt-9 flex h-64 grow animate-pulse flex-col rounded-lg bg-base-100 pb-3 transition first:w-full sm:w-1/3"></div>
+			<div class="| group flex h-64 grow animate-pulse flex-col rounded-lg bg-base-100 pb-3 transition first:w-full sm:w-1/3"></div>
+			<div class="| group flex h-64 grow animate-pulse flex-col rounded-lg bg-base-100 pb-3 transition first:w-full sm:w-1/3"></div>
 		</div>
-		<p class="mb-4">We are unable to show the portfolio at this time. Please try again in a few minutes.</p>
-	{:else}
+	{:then { posts, tags }}
 		<div class="mb-4 flex gap-3">
 			{#each tags as tag}
 				<div class="cursor-pointer rounded-lg bg-secondary px-3 py-1.5 transition hover:bg-primary">{tag}</div>
@@ -97,5 +93,10 @@
 				<div class="grow sm:w-1/3"></div>
 			{/if}
 		</div>
-	{/if}
+	{:catch}
+		<div class="mb-4 mt-6 text-center">
+			<h1 class="text-4xl font-bold text-white">Ooops.</h1>
+		</div>
+		<p class="mb-4">We are unable to show the portfolio at this time. Please try again in a few minutes.</p>
+	{/await}
 </div>
