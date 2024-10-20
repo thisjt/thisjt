@@ -1,6 +1,6 @@
 <script>
 	import '@fontsource/open-sans';
-	import '../styles/tailwind.css';
+	import '../styles/app.css';
 	import '../styles/main.scss';
 	import Sidebar from './Sidebar.svelte';
 	import Socials from './Socials.svelte';
@@ -29,18 +29,44 @@
 	});
 </script>
 
-<div class="flex flex-col lg:flex-row m-4 gap-4 lg:w-[1024px] lg:mx-auto lg:mt-12">
+<div class="m-4 flex flex-col gap-4 lg:mx-auto lg:mt-12 lg:w-[1024px] lg:flex-row">
 	<div class="flex flex-col lg:w-4/12">
 		<Sidebar />
 	</div>
 	<div class="bg-neutral rounded-2xl lg:w-8/12">
-		<div class="flex rounded-tr-2xl bg-secondary rounded-tl-2xl text-sm sm:text-lg text-white">
-			<a href="/" class="{$currentPage === '' ? '!bg-primary' : ''} py-4 text-center grow sm:w-auto sm:px-5 font-bold hover:bg-primary rounded-tl-2xl">About</a>
-			<a href="/resume" class="{$currentPage === 'resume' ? '!bg-primary' : ''} py-4 text-center grow sm:w-auto sm:px-5 font-bold hover:bg-primary">Resume</a>
-			<!-- <a href="/skills" class="{$currentPage === 'skills' ? '!bg-primary' : ''} py-4 text-center grow sm:w-auto sm:px-5 font-bold hover:bg-primary">Skills</a> -->
-			<a href="/portfolio" class="{$currentPage === 'portfolio' ? '!bg-primary' : ''} py-4 text-center grow sm:w-auto sm:px-5 font-bold hover:bg-primary">Portfolio</a>
-			<a href="/blog" class="{$currentPage === 'blog' ? '!bg-primary' : ''} py-4 text-center grow sm:w-auto sm:px-5 font-bold hover:bg-primary">Blog</a>
-			<a href="/contact" class="{$currentPage === 'contact' ? '!bg-primary' : ''} py-4 text-center grow sm:w-auto sm:px-5 font-bold hover:bg-primary rounded-tr-2xl">Contact</a>
+		<div class="bg-secondary flex rounded-tl-2xl rounded-tr-2xl text-sm text-white sm:text-lg">
+			<a
+				href="/"
+				class="{$currentPage === ''
+					? '!bg-primary'
+					: ''} hover:bg-primary grow rounded-tl-2xl py-4 text-center font-bold sm:w-auto sm:px-5"
+				>About</a
+			>
+			<a
+				href="/resume"
+				class="{$currentPage === 'resume'
+					? '!bg-primary'
+					: ''} hover:bg-primary grow py-4 text-center font-bold sm:w-auto sm:px-5">Resume</a
+			>
+			<a
+				href="/portfolio"
+				class="{$currentPage === 'portfolio'
+					? '!bg-primary'
+					: ''} hover:bg-primary grow py-4 text-center font-bold sm:w-auto sm:px-5">Portfolio</a
+			>
+			<a
+				href="/blog"
+				class="{$currentPage === 'blog'
+					? '!bg-primary'
+					: ''} hover:bg-primary grow py-4 text-center font-bold sm:w-auto sm:px-5">Blog</a
+			>
+			<a
+				href="/contact"
+				class="{$currentPage === 'contact'
+					? '!bg-primary'
+					: ''} hover:bg-primary grow rounded-tr-2xl py-4 text-center font-bold sm:w-auto sm:px-5"
+				>Contact</a
+			>
 		</div>
 		<slot />
 	</div>
