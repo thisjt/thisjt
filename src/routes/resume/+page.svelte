@@ -80,10 +80,10 @@
 		],
 	}} />
 <PageTitle text="resume" />
-<div class="px-4 w-full">
+<div class="w-full px-4">
 	<PageHeader heading="Resume" />
 	<div>
-		<img src="https://raw.githubusercontent.com/thisjt/thisjt/main/assets/techskills_nostroke.png" alt="" />
+		<img src="/techskills-min.png" alt="" />
 	</div>
 	<div class="flex gap-2">
 		<div class="flex w-1/12 sm:p-2">
@@ -92,8 +92,8 @@
 		<div class="flex items-center text-xl font-bold text-white">Skills Outline</div>
 	</div>
 	{#each skills as skill}
-		<div class="group | flex gap-2">
-			<div class="flex flex-col items-center w-1/12"><div class="group-hover:bg-gray-200 transition w-2 h-2 bg-gray-600 mb-1 mt-2.5 rounded"></div></div>
+		<div class="| group flex gap-2">
+			<div class="flex w-1/12 flex-col items-center"><div class="mb-1 mt-2.5 h-2 w-2 rounded bg-gray-600 transition group-hover:bg-gray-200"></div></div>
 			<div class="w-11/12">
 				{#each skill.split('\n') as ski}
 					{ski}<br />
@@ -102,51 +102,51 @@
 		</div>
 	{/each}
 
-	<div class="flex gap-2 mt-5">
+	<div class="mt-5 flex gap-2">
 		<div class="flex w-1/12 sm:p-4 md:p-2">
 			<img class="w-full" src="/assets/work.png" alt="" />
 		</div>
 		<div class="flex items-center text-xl font-bold text-white">Experience</div>
 	</div>
 	{#each work as xp, i}
-		<div class="group | flex gap-2">
-			<div class="flex flex-col items-center w-1/12">
-				<div class="group-hover:bg-gray-200 transition w-2 h-2 bg-gray-600 mb-1 mt-2.5 rounded"></div>
+		<div class="| group flex gap-2">
+			<div class="flex w-1/12 flex-col items-center">
+				<div class="mb-1 mt-2.5 h-2 w-2 rounded bg-gray-600 transition group-hover:bg-gray-200"></div>
 				{#if work.length - 1 !== i}
-					<div class="group-hover:bg-gray-200 transition w-1 mt-1.5 grow bg-gray-600 rounded-sm"></div>
+					<div class="mt-1.5 w-1 grow rounded-sm bg-gray-600 transition group-hover:bg-gray-200"></div>
 				{/if}
 			</div>
 			<div class="mb-4 w-11/12">
-				<div class="text-xl text-warning">{xp.company}</div>
+				<div class="text-warning text-xl">{xp.company}</div>
 				<div class="text-white">{xp.position}</div>
 				<div class="text-accent">{xp.from} - {xp.to}</div>
 				<div class="text-sm">{xp.description}</div>
 			</div>
 		</div>
 	{/each}
-	<div class="flex gap-2 mt-3">
+	<div class="mt-3 flex gap-2">
 		<div class="flex w-1/12 sm:p-2">
 			<img class="w-full" src="/assets/school.png" alt="" />
 		</div>
 		<div class="flex items-center text-xl font-bold text-white">Education</div>
 	</div>
-	<div class="group | flex gap-2">
-		<div class="flex flex-col items-center w-1/12">
-			<div class="group-hover:bg-gray-200 transition w-2 h-2 bg-gray-600 mb-1 mt-2.5 rounded"></div>
-			<div class="group-hover:bg-gray-200 transition w-1 mt-1.5 grow bg-gray-600 rounded-sm"></div>
+	<div class="| group flex gap-2">
+		<div class="flex w-1/12 flex-col items-center">
+			<div class="mb-1 mt-2.5 h-2 w-2 rounded bg-gray-600 transition group-hover:bg-gray-200"></div>
+			<div class="mt-1.5 w-1 grow rounded-sm bg-gray-600 transition group-hover:bg-gray-200"></div>
 		</div>
 		<div class="mb-4 w-11/12">
-			<div class="text-xl text-warning">University of San Carlos</div>
+			<div class="text-warning text-xl">University of San Carlos</div>
 			<div class="text-white">Bachelor of Science in Electronics Engineering</div>
 			<div class="text-accent">June 2013 - May 2019</div>
 		</div>
 	</div>
-	<div class="group | flex gap-2">
-		<div class="flex flex-col items-center w-1/12">
-			<div class="group-hover:bg-gray-200 transition w-2 h-2 bg-gray-600 mb-1 mt-2.5 rounded"></div>
+	<div class="| group flex gap-2">
+		<div class="flex w-1/12 flex-col items-center">
+			<div class="mb-1 mt-2.5 h-2 w-2 rounded bg-gray-600 transition group-hover:bg-gray-200"></div>
 		</div>
 		<div class="mb-4 w-11/12">
-			<div class="text-xl text-warning">Blessed Trinity College (High School)</div>
+			<div class="text-warning text-xl">Blessed Trinity College (High School)</div>
 			<div class="text-accent">2009 - 2013</div>
 		</div>
 	</div>
