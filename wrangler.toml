@@ -1,0 +1,35 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "thisjt-me"
+compatibility_date = "2024-10-18"
+pages_build_output_dir = ".svelte-kit/cloudflare"
+
+[[d1_databases]]
+binding = "websiteDatabase"
+database_name = "thisjt-website"
+database_id = "53ae8897-88dd-4568-a5a6-1f490a4b2081"
+
+[[r2_buckets]]
+binding = "websiteBucket"
+bucket_name = "thisjt-website"
+
+# To use different bindings for preview and production environments, follow the examples below.
+# When using environment-specific overrides for bindings, ALL bindings must be specified on a per-environment basis.
+# Docs: https://developers.cloudflare.com/pages/functions/wrangler-configuration#environment-specific-overrides
+
+######## PREVIEW environment config ########
+
+# [env.preview.vars]
+# API_KEY = "xyz789"
+
+# [[env.preview.kv_namespaces]]
+# binding = "MY_KV_NAMESPACE"
+# id = "<PREVIEW_NAMESPACE_ID>"
+
+######## PRODUCTION environment config ########
+
+# [env.production.vars]
+# API_KEY = "abc123"
+
+# [[env.production.kv_namespaces]]
+# binding = "MY_KV_NAMESPACE"
+# id = "<PRODUCTION_NAMESPACE_ID>"

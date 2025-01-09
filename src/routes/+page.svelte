@@ -1,0 +1,90 @@
+<script>
+	import PageHeader from '$lib/PageHeader.svelte';
+	import PageTitle from '$lib/PageTitle.svelte';
+	import SvelteSEO from 'svelte-seo';
+
+	const clients = [
+		{
+			slug: 'bmpharmacy',
+			locations: ['Maguikay, Mandaue City 6014 Philippines', 'Poblacion, Consolacion 6001 Philippines'],
+		},
+		{
+			slug: 'kblaundry',
+			locations: ['Lahug, Cebu City 6000 Philippines', 'Talamban, Cebu City 6000 Philippines'],
+		},
+	];
+</script>
+
+<SvelteSEO
+	title="thisjt.me personal website"
+	description={"Hello there! I am Joshua, a passionate and versatile Frontend developer, and I'm thrilled " +
+		"to have you visit my personal website. Here you'll find a digital canvas where I bring ideas to " +
+		'life through lines of code, creating unique and impactful web experiences.'}
+	canonical="https://thisjt.me/"
+	keywords="thisjt, thisjtme, personal website, personal, github, software developer"
+	openGraph={{
+		title: 'thisjt.me personal website',
+		description:
+			"Hello there! I am Joshua, a passionate and versatile Frontend developer, and I'm thrilled " +
+			"to have you visit my personal website. Here you'll find a digital canvas where I bring ideas to " +
+			'life through lines of code, creating unique and impactful web experiences.',
+		url: 'https://thisjt.me/',
+		type: 'website',
+		images: [
+			{
+				url: 'https://thisjt.me/social2.png',
+				width: 762,
+				height: 400,
+				alt: "thisjt's social banner with address and social media links",
+			},
+		],
+	}} />
+<PageTitle />
+<div class="w-full px-4">
+	<PageHeader heading="About Me" />
+	<p class="mb-4">
+		Hello there! I'm Joshua, a passionate and versatile Frontend developer, and I'm thrilled to have you visit my personal website. Here you'll find a digital canvas where I bring
+		ideas to life through lines of code, creating unique and impactful web experiences.
+	</p>
+	<p class="mb-4">
+		Feel free to browse through my portfolio to see examples of my work. I'm always excited to collaborate on new projects, so if you have an idea in mind or need a tech-savvy
+		partner for your venture, don't hesitate to get in touch!
+	</p>
+	<p class="mb-6">Thank you for stopping by, and I hope my passion for development resonates with you. Let's embark on a journey of innovation together!</p>
+	<PageHeader level="h2" heading="What I Do" />
+
+	<div class="flex flex-col gap-4 sm:flex-row">
+		<div class="flex w-full rounded-xl bg-base-100 px-4 py-10 sm:w-1/2">
+			<div class="mr-4">
+				<img src="/assets/code.png" alt="" />
+			</div>
+			<div>
+				<div class="mb-1 font-bold text-white">Frontend Web Development</div>
+				<div class="text-sm">Create, manage, develop, and fix Frontend related code.</div>
+			</div>
+		</div>
+		<div class="flex w-full rounded-xl bg-base-100 px-4 py-10 sm:w-1/2">
+			<div class="mr-4">
+				<img src="/assets/laptop.png" alt="" />
+			</div>
+			<div>
+				<div class="mb-1 font-bold text-white">Desktop Application Software</div>
+				<div class="text-sm">Develop desktop application software using web technologies.</div>
+			</div>
+		</div>
+	</div>
+
+	<PageHeader level="h2" heading="Clients" />
+	<div class="mb-4 flex flex-col gap-4 sm:flex-row">
+		{#each clients as client}
+			<div class="flex w-full flex-col rounded-xl bg-base-100 p-4 sm:w-1/2">
+				<div class="mb-4 flex w-full grow items-center justify-center sm:mb-0"><img class="w-full" src="/assets/{client.slug}.png" alt="" /></div>
+				{#each client.locations as location}
+					<div class="text-center text-xs text-gray-500">
+						{#if location}{location}{:else}&nbsp;{/if}
+					</div>
+				{/each}
+			</div>
+		{/each}
+	</div>
+</div>
